@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+</head>
+<body>
+    <!-- Header and Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bean Boutique</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="coffee-selection.html">Coffee Selection</a></li>
+                <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+                <li><a href="events-workshops.html">Events & Workshops</a></li>
+                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                <li><a href="special-offers.html">Special Offers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Hero Section: Full-Width Slider with Welcome Message -->
+    <section class="hero-slider-section">
+        <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active">
+                <img src="hero1.png" alt="Coffee cup">
+                <div class="hero-message">
+                    <h1>Welcome to Bean Boutique</h1>
+                    <p>Discover warmth, community, and the finest coffee blends. Enjoy your perfect cup with us!</p>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="hero.png" alt="Coffee beans">
+                <div class="hero-message">
+                    <h1>Freshly Roasted Beans</h1>
+                    <p>Handpicked and roasted to perfection for every coffee lover.</p>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="hero2.png" alt="Coffee community">
+                <div class="hero-message">
+                    <h1>Join Our Coffee Community</h1>
+                    <p>Connect, learn, and share your passion for coffee at Bean Boutique.</p>
+                </div>
+            </div>
+        </div>
+        <button class="hero-slider-btn hero-slider-prev" onclick="plusHeroSlider(-1)">&#10094;</button>
+        <button class="hero-slider-btn hero-slider-next" onclick="plusHeroSlider(1)">&#10095;</button>
+    </section>
+    <!-- Slideshow for Featured Products/Events -->
+    <section class="slideshow-section">
+        <h2>Featured Products & Events</h2>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="hero.png" alt="Coffee Beans">
+                <div class="caption">Signature Espresso Blend</div>
+            </div>
+            <div class="slide fade">
+                <img src="hero2.png" alt="French Press">
+                <div class="caption">French Press Workshop</div>
+            </div>
+            <div class="slide fade">
+                <img src="french.png" alt="Barista">
+                <div class="caption">Barista Training Event</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+    <!-- Community Section -->
+    <section class="community">
+        <h2>Join Our Coffee Community</h2>
+        <div class="community-images">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="People enjoying coffee">
+            <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=800&q=80" alt="Coffee shop interior">
+        </div>
+    </section>
+    <!-- Social Media Feed Plugin (Simulated) -->
+    <section class="social-feed">
+        <h2>Follow Us on Instagram</h2>
+        <div id="instagram-feed">
+            <!-- Simulated feed -->
+            <div class="insta-post"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Insta 1"><span>@beanboutique: Fresh brews daily!</span></div>
+            <div class="insta-post"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Insta 2"><span>@beanboutique: New beans in stock!</span></div>
+        </div>
+    </section>
+    <!-- Modal Popup for Email Signup -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Get 10% Off Your First Order!</h2>
+            <p>Sign up with your email to receive a discount code.</p>
+            <form id="signup-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <img src="hero.png" alt="Our Coffee Community" class="contact-img">
+            <div class="contact-form-container">
+                <div class="contact-details">
+                    <p><strong>Bean Boutique Coffee Shop</strong></p>
+                    <p>Accra, Ghana</p>
+                    <p>Phone: <a href="tel:+233508281115">+233 50 828 1115</a></p>
+                    <p>Email: <a href="mailto:hello@beanboutique.com">hello@beanboutique.com</a></p>
+                </div>
+                <p>We love hearing from our coffee community! Reach out with questions, feedback, or just to say hello.</p>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Interactive Map Plugin (OpenStreetMap) -->
+    <section class="map-section">
+        <h2>Find Us in Accra</h2>
+        <div class="map-container">
+            <!-- OpenStreetMap Embed for Accra, Ghana -->
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.228021%2C5.532004%2C-0.148021%2C5.602004&amp;layer=mapnik&amp;marker=5.566%2C-0.196"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Bean Boutique Location Map">
+            </iframe>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+    </footer>
+    <!-- Slideshow and Modal Scripts -->
+    <script src="scripts.js"></script>
+    <script>
+    // Hero Slider Plugin (Vanilla JS)
+    let heroSliderIndex = 0;
+    const heroSlides = document.getElementsByClassName('hero-slide');
+    function showHeroSlider(n) {
+        heroSliderIndex = (n + heroSlides.length) % heroSlides.length;
+        for (let i = 0; i < heroSlides.length; i++) {
+            heroSlides[i].classList.remove('active');
+        }
+        heroSlides[heroSliderIndex].classList.add('active');
+    }
+    function plusHeroSlider(n) {
+        showHeroSlider(heroSliderIndex + n);
+    }
+    // Auto slide
+    setInterval(() => plusHeroSlider(1), 5000);
+    window.plusHeroSlider = plusHeroSlider;
+    // Initialize
+    showHeroSlider(0);
+    </script>
+</body>
+</html> 

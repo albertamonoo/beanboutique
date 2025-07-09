@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Events & Workshops</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bean Boutique</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="coffee-selection.html">Coffee Selection</a></li>
+                <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+                <li><a href="events-workshops.html">Events & Workshops</a></li>
+                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                <li><a href="special-offers.html">Special Offers</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <!-- Events Section -->
+    <section class="events-section">
+        <h1>Upcoming Events & Workshops</h1>
+        <div class="events-list">
+            <!-- Event 1 -->
+            <div class="event-item">
+                <img src="barista.png" alt="Barista Training with coffee">
+                <div>
+                    <h2>Barista Training</h2>
+                    <p>Date: 2025-07-10</p>
+                    <p>Learn the art of espresso and milk frothing with our expert baristas.</p>
+                </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="event-item">
+                <img src="french.png" alt="French Press Workshop with coffee">
+                <div>
+                    <h2>French Press Workshop</h2>
+                    <p>Date: 2025-07-17</p>
+                    <p>Discover the secrets to a perfect French Press brew.</p>
+                </div>
+            </div>
+            <!-- Event 3 -->
+            <div class="event-item">
+                <img src="taste.png" alt="Coffee Tasting event">
+                <div>
+                    <h2>Coffee Tasting</h2>
+                    <p>Date: 2025-07-24</p>
+                    <p>Sample a variety of our finest blends and single origins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Registration Form -->
+    <section class="registration-section">
+        <h2>Register for an Event</h2>
+        <form id="event-registration-form">
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+    // Simulate registration (no backend)
+    document.getElementById('event-registration-form').onsubmit = function(e) {
+        e.preventDefault();
+        alert('Thank you for registering! We look forward to seeing you at the event.');
+        this.reset();
+    };
+    </script>
+</body>
+</html> 

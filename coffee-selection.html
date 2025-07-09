@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Coffee Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bean Boutique</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="coffee-selection.html">Coffee Selection</a></li>
+                <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+                <li><a href="events-workshops.html">Events & Workshops</a></li>
+                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                <li><a href="special-offers.html">Special Offers</a></li>
+            </ul>
+        </nav>
+       
+    </header>
+    <!-- Coffee Catalogue Section -->
+    <section class="catalogue-section">
+        <h1>Coffee Selection</h1>
+        <!-- Animated Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="coffee-search" placeholder="Search for coffee...">
+        </div>
+        <div class="catalogue-grid" id="catalogue-grid">
+            <!-- Coffee Product 1 -->
+            <div class="catalogue-item">
+                <img src="expreso.png" alt="Espresso Blend">
+                <h2>Espresso Blend</h2>
+                <p><strong>Tasting Notes:</strong> Rich, chocolatey, bold</p>
+                <p><strong>Brewing:</strong> Espresso, Moka Pot</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Espresso Blend', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80')">Add to Cart</button>
+            </div>
+            <!-- Coffee Product 2 -->
+            <div class="catalogue-item">
+                <img src="colombian.png" alt="Colombian Single Origin">
+                <h2>Colombian Single Origin</h2>
+                <p><strong>Tasting Notes:</strong> Fruity, bright, smooth</p>
+                <p><strong>Brewing:</strong> Pour Over, French Press</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Colombian Single Origin', 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80')">Add to Cart</button>
+            </div>
+            <!-- Coffee Product 3 -->
+            <div class="catalogue-item">
+                <img src="roast.png" alt="French Roast">
+                <h2>French Roast</h2>
+                <p><strong>Tasting Notes:</strong> Smoky, deep, intense</p>
+                <p><strong>Brewing:</strong> French Press, Drip</p>
+                <button class="add-to-cart-btn" onclick="addToCart('French Roast', 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80')">Add to Cart</button>
+            </div>
+            <!-- Coffee Product 4 -->
+            <div class="catalogue-item">
+                <img src="Cappuccino.png" alt="Cappuccino">
+                <h2>Cappuccino</h2>
+                <p><strong>Tasting Notes:</strong> Floral, citrus, tea-like</p>
+                <p><strong>Brewing:</strong> Pour Over, Aeropress</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Ethiopian Yirgacheffe', 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80')">Add to Cart</button>
+            </div>
+            <!-- Coffee Product 5 -->
+            <div class="catalogue-item">
+                <img src="Mocha.png" alt="Mocha">
+                <h2>Mocha</h2>
+                <p><strong>Tasting Notes:</strong> Balanced, nutty, sweet</p>
+                <p><strong>Brewing:</strong> Drip, Espresso</p>
+                <button class="add-to-cart-btn" onclick="addToCart('House Blend', 'https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=800&q=80')">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <!-- Instagram Feed Plugin (Simulated) -->
+    <section class="social-feed">
+        <h2>Instagram Highlights</h2>
+        <div id="instagram-feed">
+            <div class="insta-post"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Insta 1"><span>@beanboutique: Latte art contest!</span></div>
+            <div class="insta-post"><img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Insta 2"><span>@beanboutique: New arrivals!</span></div>
+        </div>
+    </section>
+    <!-- Interactive Map Plugin (OpenStreetMap) -->
+    <section class="map-section">
+        <h2>Find Us</h2>
+        <div class="map-container">
+            <!-- OpenStreetMap Embed -->
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.228021%2C5.532004%2C-0.148021%2C5.602004&amp;layer=mapnik&amp;marker=5.566%2C-0.196"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Bean Boutique Location Map">
+            </iframe>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+    // Animated Search Functionality for Coffee Selection
+    const searchInput = document.getElementById('coffee-search');
+    const catalogueGrid = document.getElementById('catalogue-grid');
+    searchInput.addEventListener('input', function() {
+        const filter = searchInput.value.toLowerCase();
+        const items = catalogueGrid.getElementsByClassName('catalogue-item');
+        for (let i = 0; i < items.length; i++) {
+            const name = items[i].getElementsByTagName('h2')[0].textContent.toLowerCase();
+            if (name.includes(filter)) {
+                items[i].style.display = '';
+                items[i].classList.add('search-highlight');
+            } else {
+                items[i].style.display = 'none';
+                items[i].classList.remove('search-highlight');
+            }
+        }
+    });
+    // Add to Cart Functionality
+    function addToCart(name, img) {
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cart.push({name, img});
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(name + ' added to cart!');
+    }
+    window.addToCart = addToCart;
+    </script>
+</body>
+</html> 

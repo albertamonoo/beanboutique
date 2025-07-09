@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bean Boutique</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="coffee-selection.html">Coffee Selection</a></li>
+                <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+                <li><a href="events-workshops.html">Events & Workshops</a></li>
+                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                <li><a href="special-offers.html">Special Offers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Shopping Cart Section -->
+    <section class="cart-section">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <button id="clear-cart-btn">Clear Cart</button>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+    // Display cart items from localStorage
+    const cartItems = document.getElementById('cart-items');
+    const clearCartBtn = document.getElementById('clear-cart-btn');
+    function renderCart() {
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cartItems.innerHTML = '';
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `<img src="${item.img}" alt="${item.name}"><span>${item.name}</span>`;
+                cartItems.appendChild(div);
+            });
+        }
+    }
+    clearCartBtn.onclick = function() {
+        localStorage.removeItem('cart');
+        renderCart();
+    };
+    renderCart();
+    </script>
+</body>
+</html> 
